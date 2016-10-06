@@ -39,7 +39,7 @@ return $http({
       foundItems.menu_items.push(item);
     }});
   if(foundItems.menu_items.length === 0){
-    return $q.reject("Not found"); 
+    return $q.reject("Nothing found"); 
     }
     return foundItems;
 });
@@ -51,8 +51,8 @@ function NarrowItDownController(MenuSearchService){
     narrowC.errorMsg="";
   }
   narrowC.getMatchedMenuItems=function(searchTerm){
-  if(searchTerm === undefined ){
-    narrowC.errorMsg="Not Found";
+  if(searchTerm === undefined  || searchTerm ==="" ){
+    narrowC.errorMsg="Nothing Found";
   }
   else{
   var promise=MenuSearchService.getMatchedMenuItems(searchTerm);
@@ -66,7 +66,7 @@ narrowC.found=[];
 narrowC.removeItem=function(index){
   narrowC.found.splice(index,1);
   if(narrowC.found.length === 0){
-    narrowC.errorMsg="Not Found";
+    narrowC.errorMsg="Nothing Found";
     console.log(narrowC.errorMsg)
   }
   else
