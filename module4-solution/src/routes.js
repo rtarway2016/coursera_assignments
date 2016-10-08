@@ -23,10 +23,9 @@ $urlRouterProvider.otherwise('/');
 		templateUrl:'src/home.template.html'
 	})
 	.state('categories.items',{
+		url:'/items/{itemShortName}',
 		templateUrl:'src/items.template.html',
 		controller: 'itemsController as itemsC',
-		params:{
-			itemShortName:null},
 		resolve:{
 			itemsList:['$stateParams','MenuDataService', function($stateParams,MenuDataService){
 			return MenuDataService.getItemsForCategory($stateParams.itemShortName);
