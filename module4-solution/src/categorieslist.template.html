@@ -3,9 +3,8 @@
         <tr ng-repeat="category in $ctrl.items" ui-sref="categories.items({itemShortName : category.short_name})"
         ui-sref-active="active"> 
         <td>{{$index + 1}}</td>
-        <td>{{category.short_name}}</td><td> {{ category.name }} </td> 
+        <td> {{ category.name }}[{{category.short_name}}] </td> 
         <td> {{ category.description }}</td>
-        <td>{{category.special_instructions}}</td>
         </tr>
        </table>     
        </div>
