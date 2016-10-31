@@ -6,8 +6,8 @@ angular.module('public')
 .controller('MyInfoController',MyInfoController);
 
 
-MyInfoController.$inject=['UserService'];
-function MyInfoController(UserService){
+MyInfoController.$inject=['UserService','ApiPath'];
+function MyInfoController(UserService,ApiPath){
 	var myInfo=this;
 	myInfo.dispMessage=false;
 	myInfo.User=UserService.getUser();
