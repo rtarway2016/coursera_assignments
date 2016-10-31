@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row" ng-if="myInfo.dispMessage">
+	Not Signed Up Yet. <a ui-sref="signUp">Sign up Now!</a>
+	</div>
+<div class="row" ng-if="!myInfo.dispMessage">
+<div class="panel-body">Name : {{myInfo.User.firstName  + " " + myInfo.User.lastName }}</div>
+<div class="panel-body">Email : {{myInfo.User.email}}</div>
+<div class="panel-body">Phone : {{myInfo.User.phone}}</div>
+<div class="panel-body">Favourite Menu :</div>
+<div class="row">
+<div class="panel-body"> {{ "Title :" + myInfo.User.favMenu.name }}</div>
+<div class="panel-body">Description :{{myInfo.User.favMenu.description}}</div>
+</div>
+<div class="panel-body">
+<img src="images\menu\{{myInfo.image}}\{{myInfo.image}}.jpg" alt="{{myInfo.User.favMenu.description}}">
+</div>
+</div>
+</div>	
+</div>
